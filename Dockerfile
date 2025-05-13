@@ -21,4 +21,4 @@ ENV API_KEY=your_api_key_here
 EXPOSE 5000
 
 # تعيين نقطة تشغيل الحاوية
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
