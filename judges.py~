@@ -1,0 +1,14 @@
+from flask import Blueprint, jsonify
+
+# إنشاء Blueprint باسم "judges_bp"
+judges_bp = Blueprint('judges_bp', __name__)
+
+@judges_bp.route('/judges', methods=['GET'])
+def judges_access():
+    """
+    نقطة النهاية الجديدة التي تُظهر رسالة ترحيب مخصصة للحكام.
+    """
+    data = {
+        "message": "مرحباً بالحكام! هذه هي نقطة النهاية المخصصة وسهلة الوصول."
+    }
+    return jsonify(data)

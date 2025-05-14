@@ -1,0 +1,17 @@
+# تحديد إصدار Python المستخدم  
+FROM python:3.12  
+
+# تعيين مجلد العمل داخل الحاوية  
+WORKDIR /app  
+
+# نسخ ملف المتطلبات أولًا لتسريع عملية بناء الصورة  
+COPY requirements.txt /app/  
+
+# تثبيت المكتبات المطلوبة بدون تخزين مؤقت  
+RUN pip install --no-cache-dir -r requirements.txt  
+
+# نسخ باقي ملفات المشروع بعد تثبيت التبعيات  
+COPY . /app/  
+
+# تعيين نقطة تشغيل الحاوية  
+CMD ["python", "main.py"]
